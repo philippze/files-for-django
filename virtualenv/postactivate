@@ -1,0 +1,21 @@
+PROJECT=[...]
+PROJECT_DIR=[...]
+
+export DATABASE_URL=[...]
+
+export SECRET_KEY=[...]
+
+
+# Production only
+export BACKUP_DIR=$HOME/[...]
+
+# Development only
+SERVER=[...]
+
+export PROD_MEDIA_DIR=$SERVER:$PROJECT/src/media
+export MEDIA_DIR=$PROJECT_DIR/src/src/media
+export PROD_BACKUP_DIR=$SERVER:backup/$PROJECT
+export PROD_DATA_DIR=$PROJECT_DIR/prod_data
+
+
+cd $PROJECT_DIR/src/src/$PROJECT

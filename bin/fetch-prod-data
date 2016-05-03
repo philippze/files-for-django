@@ -1,0 +1,5 @@
+dropdb $DB_NAME
+createdb $DB_NAME
+scp $PROD_BACKUP_DIR/newest.tar $PROD_DATA_DIR/
+PGPASSWORD=$DB_PASSWORD pg_restore --dbname=$DB_NAME --verbose --user=$DB_USER --host=localhost $PROD_DATA_DIR/newest.tar
+rsync -r $PROD_MEDIA_DIR/* $MEDIA_DIR/

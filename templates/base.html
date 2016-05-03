@@ -1,0 +1,21 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!doctype html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+    <head>
+		{% block head %}
+        <meta charset="utf-8">
+        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% endblock head %}
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% block body %}{% endblock body %}
+        {% block javascript %}
+			<script src="{% static 'js/main.js' %}"></script>
+			<!--script src="{% static 'lib/bootstrap/bootstrap.min.js' %}"></script-->
+        {% endblock javascript %}
+        {% render_block "js" %}
+    </body>
+</html>
